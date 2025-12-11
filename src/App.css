@@ -1,0 +1,16 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:system-ui,-apple-system,sans-serif; line-height:1.6; }
+.container { max-width:1200px; margin:0 auto; }
+.shadow-lg { box-shadow:0 10px 30px rgba(0,0,0,0.1); }
+.rounded-xl { border-radius:1rem; }
+.transition { transition:all 0.3s ease; }
+.hover\:scale-105:hover { transform:scale(1.05); }
+
+.bg-gray-50 { background:#f9fafb; }
+.bg-white { background:white; }
+.bg-blue-500 { background:#3b82f6; }
+.bg-blue-600 { background:#2563eb; }
+.text-blue-500 { color:#3b82f6; }
+.text-gray-600 { color:#4b5563; }
+.min-h-screen { min-height:100vh; }
+.fixed { position:fixed; top:0; left:0; right:0; z-index:50; }
