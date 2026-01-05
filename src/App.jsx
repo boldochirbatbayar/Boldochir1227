@@ -1,34 +1,49 @@
 import React, { useState } from 'react';
+
 import Dad from './assets/Dad.jpg';
 import Mom from './assets/Mom.jpg';
 import Tsogto from './assets/Tsogto.jpg';
-import Young from './assets/Young.jpg';
 import Oyu from './assets/Oyu.jpg';
+import Khana from './assets/Khana.jpg';
 import Minecraft from './assets/Minecraft.jpg';
 import Tennis from './assets/Tennis.jpg';
 import flower from './assets/Flower.jpg';
-import Khana from './assets/Khana.jpg';
+
+import ShagaiGame from './ShagaiGame.jsx';
+import NikeSite from './NikeSite.jsx';
+import NumberGuessingGame from './NumberGuessingGame.jsx';
+import TodoList from './TodoList.jsx';
+import TicTacToe from './TicTacToe.jsx';
+import MovieSite from './MovieSite.jsx';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('Нүүр');
-  const navItems = ['Нүүр', 'Миний тухай', 'Гэр бүл', 'Хобби', 'Холбоо барих'];
+  const [openProject, setOpenProject] = useState(null);
+
+  const navItems = [
+    'Нүүр',
+    'Миний тухай',
+    'Гэр бүл',
+    'Хобби',
+    'Миний төслүүд',
+    'Холбоо барих',
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">Б</span>
-            </div>
-            <h1 className="text-2xl font-bold">Болд-Очир</h1>
-          </div>
-          <div className="flex space-x-6">
+          <h1 className="text-2xl font-bold">Болд-Очир</h1>
+          <div className="flex space-x-4">
             {navItems.map(item => (
               <button
                 key={item}
                 onClick={() => setActiveSection(item)}
-                className={`px-5 py-2 rounded-lg font-medium transition-all ${activeSection === item ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-100'}`}
+                className={`px-4 py-2 rounded-lg ${
+                  activeSection === item
+                    ? 'bg-blue-500 text-white'
+                    : 'hover:bg-gray-100'
+                }`}
               >
                 {item}
               </button>
@@ -37,60 +52,42 @@ const Portfolio = () => {
         </div>
       </nav>
 
-      <main className="pt-20 container mx-auto px-6">
+      <main className="pt-24 px-6 container mx-auto">
 
         {activeSection === 'Нүүр' && (
           <section className="min-h-screen flex items-center justify-center text-center">
-            <div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                Сайн байна уу!<br />Намайг <span className="text-blue-500">Болд-Очир гэдэг</span>
-              </h1>
-              <button onClick={() => setActiveSection('Холбоо барих')} className="px-10 py-5 bg-blue-500 text-white text-xl font-bold rounded-xl hover:bg-blue-600 transition">
-                Холбоо барих
-              </button>
-            </div>
+            <h1 className="text-6xl font-bold">
+              Сайн байна уу!<br />
+              Намайг <span className="text-blue-500">Болд-Очир</span> гэдэг
+            </h1>
           </section>
         )}
 
         {activeSection === 'Миний тухай' && (
-          <section className="py-16">
-            <h2 className="text-5xl font-bold text-center mb-12">Миний тухай</h2>
-            <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-              <div className="bg-white p-8 rounded-xl shadow-lg">
-                <h3 className="text-3xl font-bold mb-6">Хувийн мэдээлэл</h3>
-                <ul className="space-y-4 text-lg">
-                  <li>Нэр: Болд-Очир</li>
-                  <li>Төрсөн: 2008.12.27</li>
-                  <li>Өндөр: 165 см</li>
-                  <li>Жин: 52 кг</li>
-                  <li>Гэр: Улаанбаатар хот сүхбаатар дүүрэг Бэлх</li>
-                </ul>
-              </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg">
-                <h3 className="text-3xl font-bold mb-6">Танилцуулга</h3>
-                <p className="text-lg leading-relaxed">
-                  Монгол Коосэн сургуулийн 4-5 ангийн сурагч. Minecraft, теннис тоглох, код бичих, зураг зурах.
-                </p>
-              </div>
-            </div>
+          <section className="py-20 max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold mb-8 text-center">Миний тухай</h2>
+            <p className="text-lg">
+              Монгол Коосэн сургуулийн сурагч. Код бичих, тоглоом хийх,
+              Minecraft, теннис тоглох дуртай.
+            </p>
           </section>
         )}
 
         {activeSection === 'Гэр бүл' && (
-          <section className="py-16">
-            <h2 className="text-5xl font-bold text-center mb-12">Миний гэр бүл</h2>
+          <section className="py-20">
+            <h2 className="text-4xl font-bold text-center mb-10">Гэр бүл</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                {name:'Батбаяр',relation:'Аав',img:Dad},
-                {name:'Алтай',relation:'Ээж',img:Mom},
-                {name:'Цогтбаяр',relation:'Ах',img:Tsogto},
-                {name:'Хантулга',relation:'Дүү',img:Khana},
-                {name:'Оюусэцэн',relation:'Дүү',img:Oyu},
+                { name: 'Батбаяр', role: 'Аав', img: Dad },
+                { name: 'Алтай', role: 'Ээж', img: Mom },
+                { name: 'Цогтбаяр', role: 'Ах', img: Tsogto },
+                { name: 'Хантулга', role: 'Дүү', img: Khana },
+                { name: 'Оюусэцэн', role: 'Дүү', img: Oyu },
               ].map(m => (
-                <div key={m.name} className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <img src={m.img} alt={m.name} className="w-full h-64 object-cover rounded-lg mb-4" />
-                  <h3 className="text-2xl font-bold">{m.name}</h3>
-                  <p className="text-blue-600 text-lg">{m.relation}</p>
+                <div key={m.name} className="bg-white p-6 rounded-xl shadow text-center">
+                  <img src={m.img} className="h-56 w-full object-cover rounded mb-4" />
+                  <h3 className="text-xl font-bold">{m.name}</h3>
+                  <p>{m.role}</p>
                 </div>
               ))}
             </div>
@@ -99,56 +96,59 @@ const Portfolio = () => {
 
         {activeSection === 'Хобби' && (
           <section className="py-20">
-            <h2 className="text-5xl font-bold text-center mb-16">Миний хобби</h2>
-            <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-              <div className="bg-gradient-to-br from-green-500 to-emerald-700 text-white rounded-2xl shadow-2xl overflow-hidden">
-                <img src={Minecraft} alt="Minecraft" className="w-full h-96 object-cover" />
-                <div className="p-8 text-center">
-                  <h3 className="text-4xl font-bold mb-3">Minecraft</h3>
-                  <p className="text-xl">Том байшин, Redstone машин хийнэ</p>
-                </div>
-              </div>
+            <h2 className="text-4xl font-bold text-center mb-10">Хобби</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <img src={Minecraft} />
+              <img src={Tennis} />
+              <img src={flower} />
+            </div>
+          </section>
+        )}
 
-              <div className="bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-2xl shadow-2xl overflow-hidden">
-                <img src={Tennis} alt="Теннис" className="w-full h-96 object-cover" />
-                <div className="p-8 text-center">
-                  <h3 className="text-4xl font-bold mb-3">Ширээний теннис</h3>
-                  <p className="text-xl">Найзуудтайгаа тоглоно</p>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-purple-500 to-pink-600 text-white rounded-2xl shadow-2xl overflow-hidden">
-                <img src={flower} alt="Зураг" className="w-full h-96 object-cover" />
-                <div className="p-8 text-center">
-                  <h3 className="text-4xl font-bold mb-3">Зураг зурах</h3>
-                </div>
-              </div>
+        {activeSection === 'Миний төслүүд' && (
+          <section className="py-20">
+            <h2 className="text-4xl font-bold text-center mb-10">Миний төслүүд</h2>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {[
+                ['Шаагай тоглоом', 'shagai'],
+                ['Nike сайт', 'nike'],
+                ['Тоо таах', 'number'],
+                ['Todo List', 'todo'],
+                ['Tic Tac Toe', 'tic'],
+                ['Movie сайт', 'movie'],
+              ].map(([title, key]) => (
+                <button
+                  key={key}
+                  onClick={() => setOpenProject(key)}
+                  className="bg-white p-8 rounded-xl shadow-lg text-xl font-bold hover:scale-105 transition"
+                >
+                  {title}
+                </button>
+              ))}
             </div>
           </section>
         )}
 
         {activeSection === 'Холбоо барих' && (
-          <section className="py-16">
-            <h2 className="text-5xl font-bold text-center mb-12">Холбоо барих</h2>
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-white p-10 rounded-xl shadow-lg">
-                <form className="space-y-6">
-                  <input type="text" placeholder="Нэр" className="w-full px-6 py-4 border-2 rounded-lg text-lg" />
-                  <input type="email" placeholder="И-мэйл" className="w-full px-6 py-4 border-2 rounded-lg text-lg" />
-                  <textarea rows={6} placeholder="Мессеж..." className="w-full px-6 py-4 border-2 rounded-lg text-lg"></textarea>
-                  <button className="w-full py-5 bg-blue-500 text-white text-xl font-bold rounded-lg hover:bg-blue-600 transition">
-                    Илгээх
-                  </button>
-                </form>
-              </div>
-            </div>
+          <section className="py-20 max-w-xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-8">Холбоо барих</h2>
+            <input className="w-full border p-3 mb-4" placeholder="Нэр" />
+            <input className="w-full border p-3 mb-4" placeholder="Имэйл" />
+            <textarea className="w-full border p-3 mb-4" rows="5" />
+            <button className="w-full bg-blue-500 text-white p-3 rounded">
+              Илгээх
+            </button>
           </section>
         )}
       </main>
 
-      <footer className="py-10 text-center text-gray-600 border-t mt-20">
-        © {new Date().getFullYear()}
-      </footer>
+      {openProject === 'shagai' && <ShagaiGame close={() => setOpenProject(null)} />}
+      {openProject === 'nike' && <NikeSite close={() => setOpenProject(null)} />}
+      {openProject === 'number' && <NumberGuessingGame close={() => setOpenProject(null)} />}
+      {openProject === 'todo' && <TodoList close={() => setOpenProject(null)} />}
+      {openProject === 'tic' && <TicTacToe close={() => setOpenProject(null)} />}
+      {openProject === 'movie' && <MovieSite close={() => setOpenProject(null)} />}
+
     </div>
   );
 };
