@@ -40,7 +40,7 @@ const TodoList = ({ close }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && add()}
-            placeholder="Шинэ ажил оруул..."
+            placeholder="Шинэ ажил оруулна уу"
             className="flex-1 px-4 py-3 md:px-6 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl text-black font-medium"
           />
           <button onClick={add} className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-black text-base md:text-lg font-bold rounded-xl md:rounded-2xl hover:scale-105 transition shadow-lg">
@@ -49,7 +49,7 @@ const TodoList = ({ close }) => {
         </div>
         <ul className="space-y-3 md:space-y-4">
           {todos.length === 0 ? (
-            <p className="text-base md:text-lg text-center opacity-60">Ажил алга...</p>
+            <p className="text-base md:text-lg text-center opacity-60">Ажил алга</p>
           ) : (
             todos.map((todo, i) => (
               <li key={i} className="bg-white/10 backdrop-blur-lg px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl flex items-center justify-between text-base md:text-lg lg:text-xl shadow-lg">

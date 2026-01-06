@@ -10,14 +10,14 @@ const MovieSite = ({ close }) => {
     { 
       title: 'INCEPTION', 
       year: '2010', 
-      desc: 'Мөрөөдөл доторх гэмт хэрэг', 
+      desc: 'Зүүд доторх гэмт хэрэг', 
       img: inception,
       trailerId: 'YoHD9XEInc0'
     },
     { 
       title: 'THE MATRIX', 
       year: '1999', 
-      desc: 'Бодит байдал гэж юу вэ?', 
+      desc: 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.', 
       img: matrix,
       trailerId: 'vKQi3bBA1y8'
     },
@@ -93,7 +93,7 @@ const MovieSite = ({ close }) => {
                   onClick={() => playTrailer(movie.trailerId)}
                   className="px-6 md:px-8 lg:px-10 py-2 md:py-3 lg:py-4 bg-red-600 text-base md:text-lg font-bold rounded-full hover:bg-red-700 transition-all shadow-lg hover:scale-105"
                 >
-                  ▶ ТРЕЙЛЕР ҮЗЭХ
+                  ▶ ҮЗЭХ
                 </button>
               </div>
             </div>
@@ -102,7 +102,7 @@ const MovieSite = ({ close }) => {
       </section>
       
       <footer className="py-4 md:py-6 text-center text-sm md:text-base opacity-60">
-        <p>Трейлер үзэхийн тулд дээрх товчлуур дээр дарна уу 🍿</p>
+        <p>дээрх товчлуур дээр дарна уу </p>
       </footer>
     </div>
   );

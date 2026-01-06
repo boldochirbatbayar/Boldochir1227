@@ -15,15 +15,15 @@ const NumberGuessingGame = ({ close }) => {
     }
     setAttempts(attempts + 1);
     if (num === target) {
-      setMessage(`🎉 АМЖИЛТ! ${attempts + 1} удаагийн оролдлогоор таалаа!`);
+      setMessage(`Баяр хүргэе! ${attempts + 1} удаагийн оролдлогоор таалаа!`);
       setGameOver(true);
     } else if (num < target) {
-      setMessage('🔥 ИЛҮҮ ӨНДӨР!');
+      setMessage('Тоо бага байна');
     } else {
-      setMessage('❄️ ИЛҮҮ БАГА!');
+      setMessage('Тоо их байна');
     }
     if (attempts + 1 >= 10 && num !== target) {
-      setMessage(`😭 Дууслаа! Зөв тоо байсан: ${target}`);
+      setMessage(`Та хожигдлоо! Зөв тоо: ${target}`);
       setGameOver(true);
     }
     setGuess('');
@@ -36,7 +36,7 @@ const NumberGuessingGame = ({ close }) => {
       <button onClick={close} className="absolute top-4 right-4 md:top-6 md:right-6 text-3xl md:text-4xl hover:text-gray-300">&times;</button>
       <div className="text-center px-4 md:px-6 max-w-4xl w-full">
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-6 md:mb-8 lg:mb-12">ТОО ТААХ</h1>
-        <p className="text-base md:text-lg lg:text-xl mb-4 md:mb-6 opacity-90">1-100 хооронд бодлоо</p>
+        <p className="text-base md:text-lg lg:text-xl mb-4 md:mb-6 opacity-90">1-100 хооронд тоо</p>
         <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 lg:mb-12">Оролдлого: <span className="text-yellow-400 font-bold">{attempts}/10</span></p>
         {!gameOver ? (
           <>

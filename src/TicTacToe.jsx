@@ -42,7 +42,7 @@ const TicTacToe = ({ close }) => {
           ))}
         </div>
         <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8">
-          {winner ? `🎉 ЯЛАГЧ: ${winner}!` : board.every(Boolean) ? '🤝 ТЭНЦЛЭЭ!' : `Дараагийн: ${isX ? 'X' : 'O'}`}
+          {winner ? `ЯЛАГЧ: ${winner}!` : board.every(Boolean) ? 'ТЭНЦЛЭЭ!' : `Дараагийн: ${isX ? 'X' : 'O'}`}
         </p>
         <button onClick={reset} className="px-6 md:px-8 lg:px-10 py-3 md:py-4 bg-yellow-500 text-black text-base md:text-lg font-bold rounded-full hover:scale-105 transition shadow-lg">
           ДАХИН ЭХЛЭХ
